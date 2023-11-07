@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_raw__stock
+    description: staged stock data
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: model
+        tests:
+          - not_null
+      - name: size
+        tests:
+          - accepted_values:
+              values: [XS, S, M, L, XL, XXL]
+      - name: color
+        tests:
+          - not_null
+            
+      

@@ -6,7 +6,18 @@ sources:
     tables:
       - name: sales
         identifier: raw_cc_sales
+        columns:
+          - name: date_date
+            description: the sales date
+            tests:
+              - not_null
+        tests:
+          - unique:
+              column_name: "(date_date || product_id)"
       - name: stock
         identifier: raw_cc_stock
+        tests:
+          - unique:
+              column_name: "concat(model, '_', color, '_', size)"
       - name: parcel
         identifier: raw_cc_parcel
