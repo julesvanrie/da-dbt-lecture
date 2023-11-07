@@ -18,7 +18,7 @@ renamed as (
         `new`,
         forecast_stock,
         stock,
-        price
+        price as sales_price
 
     from source
 
