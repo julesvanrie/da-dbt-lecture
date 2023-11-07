@@ -3,9 +3,17 @@ version: 2
 sources:
   - name: raw
     schema: raw_data_circle # dataset on BQ
+    description: raw data from circle on BQ
     tables:
       - name: sales
         identifier: raw_cc_sales # table on BQ
+        description: sales quantity per day per product_id
+        columns:
+          - name: product_id
+            description: unique combination of model, colour and size
+        tests:
+          - unique:
+              column_name: "(product_id || '-' || date_date)"
       - name: stock
         identifier: raw_cc_stock # table on BQ
       - name: parcel
