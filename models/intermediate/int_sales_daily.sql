@@ -1,7 +1,9 @@
 select
     date_date
+    ,extract(year from date_date) as year
+    ,extract(month from date_date) as month
+    ,extract(week from date_date) as week
     ,sum(turnover) as turnover
-    ,avg(turnover) as avg_basket
     ,sum(quantity) as items_count
     ,count(*) as product_id_unique
 

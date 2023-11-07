@@ -3,7 +3,7 @@ select
     ,sum(turnover) as turnover
 
 from
-    {{ ref('int_stock_sales')}}
+    {{ ref("int_sales_daily")}}
 
 group by
     date_date
