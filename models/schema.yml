@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw_data_circle # dataset on BQ
+    tables:
+      - name: sales
+        identifier: raw_cc_sales # table on BQ
+      - name: stock
+        identifier: raw_cc_stock # table on BQ
+      - name: parcel
+        identifier: raw_cc_parcel # table on BQ
+        columns:
+          - name: Parcel_id
+            tests:
+              - unique
+          - name: Transporter
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['colissimo', 'ups']
+        
+
