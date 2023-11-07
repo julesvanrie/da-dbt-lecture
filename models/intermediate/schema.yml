@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_stock_sales
+    description: combinded stock and sales
+    columns:
+      - name: product_id
+        description: the unique combination of model colour size
+    tests:
+      - unique:
+          column_name: "(product_id || '-' || date_date)"
