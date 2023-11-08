@@ -4,6 +4,9 @@ select
 
 from
     {{ ref("int_sales_daily")}}
+    -- `dbt_jules`.`int_sales_daily` # in dev
+    -- `dbt_prod`.`int_sales_daily` # in prod
+    
 
 group by
     date_date
