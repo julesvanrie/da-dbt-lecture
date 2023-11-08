@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 select
-    yearmonth(year, month)
+    {{ yearmonth(year, month) }}
     ,sum(turnover) as turnover
 
 from

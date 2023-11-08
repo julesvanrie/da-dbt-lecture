@@ -14,13 +14,17 @@ sources:
         tests:
           - unique:
               column_name: "(product_id || '-' || date_date)"
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - date_date
+                - product_id
       - name: stock
         identifier: raw_cc_stock # table on BQ
         columns:
           - name: color_name
             tests:
               - no_color:
-                  color: Red
+                  color: Blue
       - name: parcel
         identifier: raw_cc_parcel # table on BQ
         columns:
