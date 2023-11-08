@@ -16,6 +16,9 @@ sources:
               column_name: "(product_id || '-' || date_date)"
       - name: stock
         identifier: raw_cc_stock # table on BQ
+        columns:
+          - name: color
+              - no_color
       - name: parcel
         identifier: raw_cc_parcel # table on BQ
         columns:
