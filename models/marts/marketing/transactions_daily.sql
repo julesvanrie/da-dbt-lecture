@@ -1,6 +1,6 @@
 select
     date_date
-    ,sum(turnover) as turnover
+    ,sum(turnover) as revenues
     ,sum(items_count) as items_count
     ,sum(product_id_unique) as product_id_unique
 
